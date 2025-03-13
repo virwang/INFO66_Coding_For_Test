@@ -1,1 +1,2 @@
-This is a project for Coding for Test course at Fanshawe College, London,ON , Canada. 2025 Winter. 
+This is a project for the Coding for Test course at Fanshawe College, London, ON, Canada. 2025 Winter. 
+
