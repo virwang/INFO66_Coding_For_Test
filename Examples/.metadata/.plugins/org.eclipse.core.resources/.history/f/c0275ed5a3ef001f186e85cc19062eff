@@ -1,0 +1,18 @@
+package com.example;
+
+public class Temp
+{
+
+	public static void main(String[] args)
+	{
+//		int res = 0;
+		int[][] testArray = new int[2][3];
+
+		System.out.println(testArray.length);
+
+		double testRam = Math.random() * ((55.5 - 10.0) + 10.0);
+		System.out.println(testRam);
+
+	}
+
+}

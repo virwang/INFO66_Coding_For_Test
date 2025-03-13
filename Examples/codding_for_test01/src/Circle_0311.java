@@ -1,0 +1,15 @@
+/**
+ * Filename: Circle.java Author: Yun-Jiung Wang Date: Mar 11, 2025 4:13:09 p.m.
+ * Description:This will define my Circle class and it's methods and properties
+ */
+
+public class Circle_0311
+{
+	
+	public double radius = 1.0;
+
+	public double findArea()
+	{
+		return radius * radius * Math.PI;
+	};
+}

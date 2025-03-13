@@ -1,0 +1,26 @@
+/**
+*Filename: Lesson_0311.java
+*	Author: Yun-Jiung Wang
+*		 Date: Mar 11, 2025 4:08:38 p.m.
+*Description:
+*/
+
+/**
+ * 
+ */
+public class Lesson_0311_TestMethods
+{
+
+	public final String NAME = "HELLO, My name is ";
+
+	public static void main(String[] args)
+	{
+		Circle_0311 circle = new Circle_0311();
+		circle.radius = 5;
+		System.out.println("Raduis of Circle: ");
+		double circleRest = circle.findArea();
+		System.out.println(circleRest);
+
+	}
+
+}

@@ -1,0 +1,42 @@
+package com.example;
+/**
+   Filename: FileWriterExample.java
+     Author: Shelley Lapkowski
+       Date: Oct 25, 2024 12:24:46 p.m.
+Description: This program will allow the user to type a sentence
+						 and will save that sentence to a file
+ */
+
+import java.util.Scanner;
+import java.io.*;
+
+public class FileWriterExample
+{
+	public static void main(String[] args)
+	{
+		Scanner myInput = new Scanner(System.in);
+		
+		//get sentence from user
+		System.out.println("Please type a sentence and I will save it to a file.");
+		String myText = myInput.nextLine();
+		
+		//create reference to File object and will create folders/subfolders/file
+		//if they do not exist
+		File outputFile = new File("C:\\NewestFolder\\NewestSubFolder\\sentence.txt");
+		outputFile.getParentFile().mkdirs();
+		
+		try
+		{
+			//create printWriter object and write to file
+			PrintWriter writer = new PrintWriter(outputFile);
+			writer.write(myText);
+			//close writer, this is when it's going to write to file
+			writer.close();
+		}
+		catch(FileNotFoundException ex)
+		{
+			System.out.println("Exception occurred! Message: " + ex.getMessage());
+		}
+	}
+
+}

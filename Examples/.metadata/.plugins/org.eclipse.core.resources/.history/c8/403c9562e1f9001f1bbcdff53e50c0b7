@@ -1,0 +1,236 @@
+
+/**
+*Filename: SwimmingAnalyzer.java
+*	Author: Yun-Jiung Wang
+*		 Date: Feb 28, 2025 3:15:12 p.m.
+*Description: For user to prepare for the swimming 100m free-style race.
+*	User Input: gender (male or female), swimming times
+*/
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class SwimmingAnalyzer
+{
+
+	static String BEST = "Your fastest time is better than the ";
+	static String BETTER = "Your fastest time is the same as the ";
+	final static String GOOD = "Your fastest time is pretty good, but it could be better.";
+	final static String WORSE = "Your fastest time isn't the best. You need lots of practice.";
+
+	public static void main(String[] args)
+	{
+		Scanner scanner = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.##");
+
+		// User input
+		String gender = "";
+		int swimmingTimesNumber = 0;
+
+		// Calculate
+		double avgSwimtimes = 0.0;
+		double fastestSwimtime = 0.0;
+		double slowestSwimTime = 0.0;
+		double differSwimTime = 0.0;
+
+		System.out.println("Yun-Jiung Wang's Swimming Time Analyzer!");
+		System.out.println("*************************************************************************");
+
+		System.out.println("Please enter the gender:");
+		gender = scanner.nextLine();
+//		if (!gender.equals("male") && !gender.equals("female"))
+//		{
+//			scanner.close();
+//			System.err.println("Gender only allows male and female. Please enter again! Note: case mattters!");
+//			return;
+//		}
+
+		boolean isGenderValid = false;
+		while (!isGenderValid)
+		{
+			if(!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female")) {
+				
+			}
+			
+			System.err.println("Gender only allows male and female. Please enter again! Note: case mattters!");
+			scanner.nextLine();
+
+		}
+
+		BEST += gender + "'s world record! Wow!";
+		BETTER += gender + "'s world record!";
+
+		System.out.println("Please enter the swim times you will be recording:");
+		swimmingTimesNumber = scanner.nextInt();
+		if (swimmingTimesNumber < 2)
+		{
+			scanner.close();
+			System.err.println("SwimmingTimesNumber should enter integer and larger or equal to 2. Please enter again!");
+			return;
+		}
+
+		// swimmingTimes array
+		double[] swimTimeArr = new double[swimmingTimesNumber];
+		for (int i = 0; i < swimmingTimesNumber; i++)
+		{
+			System.out.println("Enter swimming time in sec for time " + (i + 1) + " and press enter:");
+			scanner.nextLine();
+			swimTimeArr[i] = scanner.nextDouble();
+		}
+
+		// Validate
+		for (int i = 0; i < swimTimeArr.length; i++)
+		{
+			if (swimTimeArr[i] <= 0)
+			{
+				System.err.println("Swim time should be grater than 0.");
+				scanner.close();
+				break;
+			}
+		}
+
+		scanner.close();
+
+		avgSwimtimes = getAvgSwimtime(swimTimeArr);
+		fastestSwimtime = getFastedSwimtime(swimTimeArr);
+		slowestSwimTime = getSlowestSwimtime(swimTimeArr);
+		differSwimTime = getDiffBtwFastestAndSlowest(swimTimeArr);
+
+		System.out.println("Here are your results:\n");
+		System.out.println("Your average number of calories in a day is: " + df.format(avgSwimtimes));
+		System.out.println("Your fastest time was: " + df.format(fastestSwimtime));
+		System.out.println("Your slowest time was: " + df.format(slowestSwimTime));
+		System.out.println("Your range (difference between fastest and slowest) was: " + df.format(differSwimTime));
+
+		messagesByGender(gender, fastestSwimtime);
+
+		System.out.println("\nYour fastest time is the same as the " + gender + "'s world record!");
+	}
+
+	/**
+	 * 
+	 * Method Name:getAvgSwimtime Purpose: get average swimming time Accepts:
+	 * SwimmingAnalyzer Returns:double average swim time
+	 */
+	public static double getAvgSwimtime(double[] inputArr)
+	{
+		double sumSwimtime = 0.0;
+
+		for (int i = 0; i < inputArr.length; i++)
+		{
+			sumSwimtime += inputArr[i];
+		}
+
+		return sumSwimtime / inputArr.length;
+	}
+
+	/**
+	 * 
+	 * Method Name:getFastedSwimtime Purpose: get Fasted Swimtime Accepts:
+	 * SwimmingAnalyzer Returns: return shortest time
+	 */
+	private static double getFastedSwimtime(double[] inputArr)
+	{
+		double fastestSwimtime = inputArr[0];
+
+		for (int i = 0; i < inputArr.length; i++)
+		{
+			// if fastestSwimtime is larger than the coming swim time
+			if (Double.compare(fastestSwimtime, inputArr[i]) > 0)
+			{
+				fastestSwimtime = inputArr[i];
+			}
+		}
+		return fastestSwimtime;
+	}
+
+	/**
+	 * 
+	 * Method Name:getSlowestSwimtime Purpose:getSlowestSwimtime find the longest
+	 * swim time Accepts: SwimmingAnalyzer Returns:double longest swim time
+	 */
+	public static double getSlowestSwimtime(double[] inputArr)
+	{
+		double slowestSwimtime = inputArr[0];
+
+		for (int i = 0; i < inputArr.length; i++)
+		{
+			// if fastestSwimtime is smaller than the coming swim time
+			if (Double.compare(slowestSwimtime, inputArr[i]) < 0)
+			{
+				slowestSwimtime = inputArr[i];
+			}
+		}
+		return slowestSwimtime;
+	}
+
+	/**
+	 * 
+	 * Method Name:getDiffBtwFastestAndSlowest Purpose: get differences between
+	 * fastest and slowest swim time Accepts: SwimmingAnalyzer Returns:double
+	 * (slowest swim time - fastest swim time)
+	 */
+	public static double getDiffBtwFastestAndSlowest(double[] inputArr)
+	{
+		double fastestSwimtime = inputArr[0];
+		double slowestSwimtime = inputArr[0];
+
+		for (int i = 0; i < inputArr.length; i++)
+		{
+			// if minSwim is smaller than the coming swim time
+			if (Double.compare(fastestSwimtime, inputArr[i]) > 0)
+			{
+				fastestSwimtime = inputArr[i];
+			}
+
+			if (Double.compare(slowestSwimtime, inputArr[i]) < 0)
+			{
+				slowestSwimtime = inputArr[i];
+			}
+		}
+
+		return slowestSwimtime - fastestSwimtime;
+	}
+
+	/**
+	 * Method Name:messagesByGender Purpose: show display messages Accepts:
+	 * SwimmingAnalyzer Returns:void do not return anything
+	 */
+	public static void messagesByGender(String gender, double fastestGrade)
+	{
+		switch (gender)
+		{
+		case "female":
+			if (fastestGrade < 51.17)
+			{
+				System.out.println(BEST);
+			} else if (fastestGrade == 51.71)
+			{
+				System.out.println(BETTER);
+			} else if (fastestGrade > 51.71 && fastestGrade <= 56.00)
+			{
+				System.out.println(GOOD);
+			} else
+			{
+				System.out.println(WORSE);
+			}
+			break;
+
+		default:
+			if (fastestGrade < 46.40)
+			{
+				System.out.println(BEST);
+			} else if (fastestGrade == 46.40)
+			{
+				System.out.println(BETTER);
+			} else if (fastestGrade <= 51.00 && fastestGrade > 46.4)
+			{
+				System.out.println(GOOD);
+			} else
+			{
+				System.out.println(WORSE);
+			}
+			break;
+		}
+	}
+}

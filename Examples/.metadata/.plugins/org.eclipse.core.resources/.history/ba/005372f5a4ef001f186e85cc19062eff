@@ -1,0 +1,24 @@
+package com.example;
+
+public class Temp
+{
+
+	public static void main(String[] args)
+	{
+//		int res = 0;
+		int[][] testArray = new int[2][3];
+
+//		System.out.println(testArray.length);
+
+		int testRam = (int) (Math.random() * ((55.5 - 10.0) + 10.0));
+		System.out.println(testRam);
+		double random = Math.random() * ((55.5 - 10.1) + 10.1);
+		System.out.println(random);
+		double ransomFormtat = Math.round(random * 100.0) / 100.0;
+		System.out.println(ransomFormtat);
+		//
+		double randomFormat1 = Math.round(random *1000.0)/1000.0;
+		System.out.println(randomFormat1);
+	}
+
+}

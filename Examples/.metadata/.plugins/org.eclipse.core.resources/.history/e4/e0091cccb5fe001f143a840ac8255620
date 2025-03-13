@@ -1,0 +1,24 @@
+/**
+*Filename: Lesson_0311.java
+*	Author: Yun-Jiung Wang
+*		 Date: Mar 11, 2025 4:08:38 p.m.
+*Description:
+*/
+
+/**
+ * 
+ */
+public class Lesson_0311
+{
+	Circle_0311 circle = new Circle_0311();
+
+	public final String NAME = "HELLO, My name is ";
+
+	public String name(String name)
+	{
+		System.out.println(NAME + name);
+		return NAME + name;
+	}
+	
+	
+}

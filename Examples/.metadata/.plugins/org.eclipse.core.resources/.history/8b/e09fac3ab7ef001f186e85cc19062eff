@@ -1,0 +1,35 @@
+package com.example;
+
+import java.util.Arrays;
+
+public class Temp
+{
+
+	public static void main(String[] args)
+	{
+//		int res = 0;
+		int[][] testArray = new int[2][3];
+
+//		System.out.println(testArray.length);
+
+		int testRam = (int) (Math.random() * ((20.5 - 10.0) + 10.0));
+		System.out.println(testRam);
+		double random = Math.random() * ((20.5 - 10.1) + 10.1);
+		System.out.println(random);
+		// 小數點第二位
+		double ransomFormtat = Math.round(random * 100.0) / 100.0;
+		System.out.println(ransomFormtat);
+		// 小數點第三位
+		double randomFormat1 = Math.round(random * 1000.0) / 1000.0;
+		System.out.println(randomFormat1);
+
+		int[] arr1 =
+		{ 1, 2, 35, 7, 12, 0 };
+		String[] arr2 =
+		{ "Banana", "Amy", "Qube", "Tomato", "Coco" };
+		System.out.println("No sort: " + arr1.toString());
+//		System.out.println("Sorted: ");
+		Arrays.sort(arr1);
+	}
+
+}

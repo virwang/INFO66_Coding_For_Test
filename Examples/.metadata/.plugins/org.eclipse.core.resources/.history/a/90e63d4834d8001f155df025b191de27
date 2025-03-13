@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ *The goal of this code is to find an ideal place to buy
+ *Including some
+ */
+public class HouseHunting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int bedrooms = 1;
+		int bathrooms = 1;
+		Map<String, String> typeOfHomeMap = new HashMap<String, String>();
+		int minPrice = 600;
+		int maxPrice = 1100;
+		char garage = 'Y';
+		
+		typeOfHomeMap.put("condo", "condo");
+		typeOfHomeMap.put("singel family", "single family");
+		typeOfHomeMap.put("duplex", "duplex");
+		typeOfHomeMap.put("studio", "studio");
+		
+		List<String> typeOfHouseList = new ArrayList<String>();
+		typeOfHouseList.add("condo");
+		typeOfHouseList.add("duplex");
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

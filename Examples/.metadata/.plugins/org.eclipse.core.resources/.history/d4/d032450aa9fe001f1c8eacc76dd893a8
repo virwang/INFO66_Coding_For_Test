@@ -1,0 +1,125 @@
+
+/**
+*Filename: Lesson_0307.java
+*	Author: Yun-Jiung Wang
+*		 Date: Mar 7, 2025 2:29:41 p.m.
+*Description:
+*/
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class Lesson_0307
+{
+//	static final String FILE_PATH = "C:\\Users\\virginia\\OneDrive\\Fanshawe_Software and System Information Testing\\Coding For Test\\generdatedFiles\\";
+	static final String FILE_PATH = "C:\\Users\\virginia\\OneDrive\\Fanshawe_Software and System Information Testing\\Coding For Test\\gen\\";
+	static final String FILE_NAME = "practice_inclass.txt";
+//	static final String SUB_FOLER = "sub\\";
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+
+		Scanner scanner = new Scanner(System.in);
+		long startTime = System.nanoTime();
+		System.out.println("Please type a sentence and I will save");
+
+		int[] tempArr =
+		{ 1, 6, 2, 4, 7, 9, 21, 5, 8, 10, 12, 20 };
+
+		String myNext = scanner.nextLine();
+		File myFile = new File(FILE_PATH + FILE_NAME);
+		File pathFile = new File(FILE_PATH);
+		
+		System.out.println(pathFile.exists());
+//		System.out.println(myFile.getParentFile());
+
+		try
+		{
+			myFile.getParentFile().mkdirs();
+			myFile = new File(FILE_PATH + FILE_NAME);
+			myFile.createNewFile();
+		
+			PrintWriter pWriter = new PrintWriter(myFile);
+
+			// write text to file
+			pWriter.write(myNext);
+			// close the action PrintWriter
+			pWriter.close();
+		} catch (Exception fe)
+		{
+			// TODO: handle exception
+			System.out.println("There has been an exception!");
+			System.out.println(fe.getMessage());
+			return;
+		}
+
+		fileReader(myFile);
+
+//		bubbleSort(tempArr.length, tempArr);
+//
+//		loopArray(tempArr);
+
+		System.out.println("finish");
+		long sendTime = System.nanoTime();
+//		System.out.println("End Time: "+LocalDateTime.of);
+	}
+
+	public static void bubbleSort(int size, int[] arr)
+	{
+		boolean swapped;
+
+		for (int i = 0; i < size - 1; i++)
+		{
+			swapped = false;
+			System.out.println("arr[" + i + "] = " + arr[i]);
+
+			for (int j = 0; j < size - 1; j++)
+			{
+				if (arr[j] > arr[j + 1])
+				{
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					swapped = true;
+				}
+			}
+
+		}
+	}
+
+	public static void loopArray(int[] arr)
+	{
+		System.out.println("Swapped array");
+		for (int i = 0; i < arr.length; i++)
+		{
+			System.out.println(arr[i]);
+		}
+	}
+
+	public static void fileReader(File inputFile)
+	{
+		try
+		{
+			Scanner fileReaderScanner = new Scanner(inputFile);
+
+			while (fileReaderScanner.hasNextLine())
+			{
+				String contentString = fileReaderScanner.nextLine();
+				System.out.println("File Path: " + FILE_PATH + "; " + "File Name: " + FILE_NAME);
+
+				System.out.println("Content: "+ contentString);
+			}
+
+		} catch (FileNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println(e.getStackTrace());
+		}
+
+	}
+
+}
