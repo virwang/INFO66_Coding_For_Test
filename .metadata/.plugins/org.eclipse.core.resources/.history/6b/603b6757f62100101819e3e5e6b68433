@@ -1,0 +1,64 @@
+/**
+*Filename Planet.java
+*	Author Yun-Jiung Wang
+*		 Date Apr 25, 2025 124501 PM
+*Description: subclass of HeavenlyObject
+*/
+
+public class Planet extends HeavenlyObject
+{
+
+	private boolean supportLife;
+
+	public Planet(double radius, boolean supportLife)
+	{
+		super("Planet", radius);
+		this.supportLife = supportLife;
+	}
+
+	/**
+	 * @param type
+	 * @param radius
+	 * @param name
+	 */
+	public Planet(double radius, String name, boolean supportLife)
+	{
+		super("Planet", radius, name);
+		this.supportLife = supportLife;
+
+	}
+
+	/**
+	 * Method: findPerimeter 
+	 * Purpose: method for return a double formula circumference of a circle. C = 2 * PI * radius
+	 * Accepts: None 
+	 * Return: double
+	 */
+	@Override
+	public double findPerimeter()
+	{
+		return 2*Math.PI * getRadius();
+	}
+
+	
+	/**
+	 * Method: findSurfaceArea 
+	 * Purpose: method for return a double formula surface area  = 4* PI * radius2
+	 * Accepts: None 
+	 * Return: double
+	 */
+	@Override
+	public double findSurfaceArea()
+	{
+		return 4 * Math.PI * Math.pow(getRadius(), 2);
+	}
+
+	@Override
+	public double findSizeCategory()
+	{
+		return 0;
+		// TODO Auto-generated method stub
+		// return 0;
+	}
+
+}

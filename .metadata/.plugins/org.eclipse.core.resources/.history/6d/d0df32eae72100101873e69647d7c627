@@ -1,0 +1,38 @@
+package com.example;
+/*
+     File Name: BoardingHouse.java
+        Author: Shelley Lapkowski
+          Date: Apr. 4, 2023 10:25:36 a.m.
+   Description: This class extends from Accommodation and follows the specifications outlined
+                in our uml diagrams 
+*/
+public class BoardingHouse extends Accommodation
+{
+	private int unitNumber;
+	
+	public BoardingHouse(String location, int unit)
+	{
+		super("boarding house", location);
+		this.unitNumber = unit;
+	}
+	//accessor and mutator methods
+	public int getUnit()
+	{
+		return this.unitNumber;
+	}	
+	public void setUnit(int unitNumber)
+	{
+		this.unitNumber = unitNumber;
+	}
+	/*
+  Method Name:  describeAccommodation
+  Purpose:  to describe what the accomodation is all about
+  Accepts:  nothing
+  Returns:  void
+	*/
+	public void describeAccomodation()	
+	{
+	System.out.println("This " + this.getType() + " dwelling is located at " + this.getLocation() +
+			               "\nIt is identified by unit number " + this.unitNumber + ".");
+	}
+}

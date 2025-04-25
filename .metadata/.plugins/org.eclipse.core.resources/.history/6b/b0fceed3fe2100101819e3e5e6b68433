@@ -1,0 +1,87 @@
+/**
+ * Filename: HeavenlyObjectTest.java Author: Yun-Jiung Wang Date: Apr 25, 2025
+ * 1:19:56 PM Description: To demonstrate polymorphic behaviour of
+ * HeaenlyObject, Planet and Moon
+ */
+
+public class HeavenlyObjectTest
+{
+	public static void main(String[] args)
+	{
+		/*
+		 * 1) Create a planet object that calls the two argument constructor with a radius of 3327.87 
+          which does not supports life.
+			2) Create a second planet object that calls the three argument constructor:  
+				Send in the following: Radius = 7854.79 
+        Name = “Mala Neptune” 
+        SupportLife = true: 
+		 */
+		Planet planet1 = new Planet(3327.87, false);
+		Planet planet2 = new Planet(7854.79, "Mala Neptune", true);
+
+		Moon moon1 = new Moon(1267.21, 89435.5);
+		Moon moon2 = new Moon(2589.44, "Centari", 9633.67);
+
+		System.out.println("===== Print Step 1~4  getter methods result =====\n");
+		System.out.println(
+				"Planet1\n Name: " + planet1.getName() + "\n Radius: " + planet1.getRadius() + "\n type: " + planet1.getType());
+		System.out.println(
+				"Planet2\n Name: " + planet2.getName() + "\n Radius: " + planet2.getRadius() + "\n type: " + planet2.getType());
+
+		System.out.println("Moon1\n Name:" + moon1.getName() + "\n Radius:" + moon1.getRadius() + "\n type: "
+				+ moon1.getType() + "\n OrbitDistance:" + moon1.getOrbitDistance());
+		System.out.println("Moon2\n Name:" + moon2.getName() + "\n Radius:" + moon2.getRadius() + "\n type: "
+				+ moon2.getType() + "\n OrbitDistance:" + moon2.getOrbitDistance());
+
+		System.out.println("\n===== Print Step 1~4  toString outputs ===== \n");
+
+		System.out.println("Planet1: \n toString: " + planet1.toString());
+		System.out.println("Planet2: \n toString: " + planet2.toString());
+		System.out.println("Moon1: \n toString: " + moon1.toString());
+		System.out.println("Moon2: \n toString: " + moon2.toString());
+
+		// 5) Change the name of the unknown planet to “Oberon”.
+		planet1.setName("Oberon");
+		moon1.setName("Oberon");
+
+		// 6) Change the orbit of the Centari moon to 6781.9 km.
+		moon2.setOrbitDistance(6781.9);
+
+		// 7) Recall the two getter methods associated with the changes you just made
+		// and print the results to the screen
+		System.out.println("\n===== Print Step 5,6  getter methods result =====\n");
+		System.out.println(
+				"Planet1\n Name: " + planet1.getName() + "\n Radius: " + planet1.getRadius() + "\n type: " + planet1.getType());
+		System.out.println(
+				"Planet2\n Name: " + planet2.getName() + "\n Radius: " + planet2.getRadius() + "\n type: " + planet2.getType());
+
+		System.out.println("Moon1\n Name:" + moon1.getName() + "\n Radius:" + moon1.getRadius() + "\n type: "
+				+ moon1.getType() + "\n OrbitDistance:" + moon1.getOrbitDistance());
+		System.out.println("Moon2\n Name:" + moon2.getName() + "\n Radius:" + moon2.getRadius() + "\n type: "
+				+ moon2.getType() + "\n OrbitDistance:" + moon2.getOrbitDistance());
+
+		/*
+		 * 8) Create a HeavenlyObject array called heavenlyArray that will hold 4
+		 * objects and assign each of your objects to the four elements of the array.
+		 */
+		HeavenlyObject[] heavenlyArray = new HeavenlyObject[4];
+		heavenlyArray[0] = planet1;
+		heavenlyArray[1] = planet2;
+		heavenlyArray[2] = moon1;
+		heavenlyArray[3] = moon2;
+
+		/*
+		 * 9) Demonstrate polymorphic behaviour by looping through the array printing
+		 * out the following methods: - findPerimeter() - findSurfaceArea( ) -
+		 * findSizeCategory()
+		 */
+		System.out.println("\n\n===== Print Step 8  methods result =====\n");
+		for (int i = 0; i < heavenlyArray.length; i++)
+		{
+			System.out.println("Round " + i + ":\n findPerimeter: " + heavenlyArray[i].findPerimeter() + "\n findSurfaceArea: "
+					+ heavenlyArray[i].findSurfaceArea() + "\n" + " findSizeCategory: " + heavenlyArray[i].findSizeCategory()+"\n");
+		}
+System.out.println("\t\t==== end ====");
+	}
+
+}

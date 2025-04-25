@@ -1,0 +1,90 @@
+/**
+*Filename: Moon.java
+*	Author: Yun-Jiung Wang
+*		 Date: Apr 25, 2025 1:09:04 PM
+*Description: subclass of HeavenlyObject
+*/
+
+/**
+ * 
+ */
+public class Moon extends HeavenlyObject
+{
+
+	public double orbitDistance;
+
+	/**
+	 * @param type
+	 * @param radius
+	 */
+	public Moon(double radius, double orbitDistance)
+	{
+		super("Moon", radius);
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param type
+	 * @param radius
+	 * @param name
+	 */
+	public Moon(double radius, String name, double orbitDistance)
+	{
+		super("Moon", radius, name);
+		this.orbitDistance = orbitDistance;
+	}
+
+	/**
+	 * @return the orbitDistance
+	 */
+	public double getOrbitDistance()
+	{
+		return orbitDistance;
+	}
+
+	/**
+	 * @param orbitDistance the orbitDistance to set
+	 */
+	public void setOrbitDistance(double orbitDistance)
+	{
+		this.orbitDistance = orbitDistance;
+	}
+//perimeter of a moon
+	/**
+	 * Method: findPerimeter Purpose:find perimeter of a moon by using a double formula
+	 * circumference of a circle. C = 2 * PI * radius Accepts: None Return: double
+	 */
+	@Override
+	public double findPerimeter()
+	{
+		
+		return 2 * Math.PI * getRadius();
+	}
+
+	/**
+	 * Method: findSurfaceArea Purpose: find 
+the surface area of a moon via using a double formula surface
+	 * area = 4* PI * radius*radius  Accepts: None Return: double
+	 */
+	@Override
+	public double findSurfaceArea()
+	{		
+		return 4*Math.PI * Math.pow(getRadius(), 2);
+	}
+
+	@Override
+	public String findSizeCategory()
+	{
+		
+		return ;
+	}
+
+	@Override
+	public String toString()
+	{
+		
+		return super.toString();
+	}
+	
+
+}

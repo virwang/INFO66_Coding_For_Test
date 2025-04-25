@@ -1,0 +1,29 @@
+/**
+*Filename: Moon.java
+*	Author: Yun-Jiung Wang
+*		 Date: Apr 25, 2025 1:09:04 PM
+*Description: subclass of HeavenlyObject
+*/
+
+/**
+ * 
+ */
+public class Moon extends HeavenlyObject
+{
+	
+	
+	/**
+	 * @param type
+	 * @param radius
+	 * @param name
+	 */
+	public Moon(String type, double radius, String name)
+	{
+		//super(type, radius, name);
+		// TODO Auto-generated constructor stub
+	}
+
+	public double orbitDistance;
+	
+	
+}

@@ -1,0 +1,88 @@
+/**
+ * Filename: HeavenlyObject.java Author: Yun-Jiung Wang Date: Apr 25, 2025
+ * 12:33:59 PM Description: The root class for class Planet, Moon
+ */
+
+public abstract class HeavenlyObject
+{
+	private String type;
+	private double radius;
+	private String name;
+
+	/**
+	 * @param type
+	 * @param radius
+	 */
+	public HeavenlyObject(String type, double radius)
+	{
+		super();
+		this.type = type;
+		this.radius = radius;
+	}
+
+	/**
+	 * @param type
+	 * @param radius
+	 * @param name
+	 */
+	public HeavenlyObject(String type, double radius, String name)
+	{
+		super();
+		this.type = type;
+		this.radius = radius;
+		this.name = name;
+	}
+
+	/**
+	 * @return the radius
+	 */
+	public double getRadius()
+	{
+		return radius;
+	}
+
+	/**
+	 * @param radius the radius to set
+	 */
+	public void setRadius(double radius)
+	{
+		this.radius = radius;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName()
+	{
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public String getType()
+	{
+		return type;
+	}
+
+	public abstract double findPerimeter();
+
+	public abstract double findSurfaceArea();
+
+	public abstract double findSizeCategory();
+
+	public String toString()
+	{
+		return "This heavenly object's is a(n) " + getType() + ", and its name is " + getName() + ". The radius of this "
+				+ getType() + " is (radius value) kilometers.";
+	}
+
+}

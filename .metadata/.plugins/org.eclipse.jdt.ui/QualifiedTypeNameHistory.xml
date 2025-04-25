@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.System.Logger.Level"/>
-    <fullyQualifiedTypeName name="codding_for_test01.HelloWorld"/>
-    <fullyQualifiedTypeName name="sun.util.logging.resources.logging"/>
-    <fullyQualifiedTypeName name="java.lang.System.Logger"/>
-    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
-    <fullyQualifiedTypeName name="org.graalvm.compiler.nodes.SafepointNode"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.hotspot.replacements.ObjectCloneNode"/>
     <fullyQualifiedTypeName name="java.lang.AssertionError"/>
     <fullyQualifiedTypeName name="java.lang.Enum"/>
@@ -15,7 +9,6 @@
     <fullyQualifiedTypeName name="java.text.Collator"/>
     <fullyQualifiedTypeName name="javafx.print.Collation"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.text.NumberFormat"/>
     <fullyQualifiedTypeName name="int"/>
     <fullyQualifiedTypeName name="java.lang.Process"/>
@@ -25,10 +18,8 @@
     <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.xni.XMLDTDContentModelHandler"/>
     <fullyQualifiedTypeName name="javax.lang.model.element.NestingKind"/>
     <fullyQualifiedTypeName name="com.example.ScannerExample"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.example.Template"/>
     <fullyQualifiedTypeName name="java.lang.Void"/>
-    <fullyQualifiedTypeName name="java.security.PublicKey"/>
     <fullyQualifiedTypeName name="com.example.Temp"/>
     <fullyQualifiedTypeName name="javafx.css.CssParser.ParseError.StringParsingError"/>
     <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
@@ -57,7 +48,16 @@
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.replacements.InstanceOfSnippetsTemplates.NonMaterializationUsageReplacer"/>
     <fullyQualifiedTypeName name="Lesson_0311"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="Circle_0311"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="Planet"/>
+    <fullyQualifiedTypeName name="Moon"/>
+    <fullyQualifiedTypeName name="HeavenlyObject"/>
+    <fullyQualifiedTypeName name="HeavenlyObjectTest"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

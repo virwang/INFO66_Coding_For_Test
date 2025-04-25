@@ -1,0 +1,16 @@
+/**
+*Filename: Moon.java
+*	Author: Yun-Jiung Wang
+*		 Date: Apr 25, 2025 1:09:04 PM
+*Description: subclass of HeavenlyObject
+*/
+
+/**
+ * 
+ */
+public class Moon extends HeavenlyObject
+{
+	public double orbitDistance;
+	
+	
+}

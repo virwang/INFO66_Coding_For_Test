@@ -1,0 +1,51 @@
+package com.example;
+/*
+     File Name: SingleFamily.java
+        Author: Shelley Lapkowski
+          Date: Apr. 4, 2023 10:13:19 a.m.
+   Description: This class inherits from Accommodation and follows the specifications outlined
+                in our uml diagram
+*/
+public class SingleFamily extends Accommodation
+{
+	private int bathrooms;
+	private int bedrooms;
+	
+	public SingleFamily(String location, int bedrooms, int bathrooms)
+	{
+		super("Single Family", location);
+		this.bathrooms = bathrooms;
+		this.bedrooms = bedrooms;
+	}
+	
+	//accessor and mutator methods
+	public int getBedrooms()
+	{
+		return this.bedrooms;
+	}
+	public int getBaths()
+	{
+		return this.bathrooms;
+	}
+	public void setBedrooms(int bedrooms)
+	{
+		this.bedrooms = bedrooms;
+	}
+	public void setBaths(int bathrooms)
+	{
+		this.bathrooms = bathrooms;
+	}
+	/*
+  Method Name:  describeAccommodation
+      Purpose:  to describe what the accomodation is all about
+      Accepts:  nothing
+      Returns:  void
+ */
+	@Override
+	public void describeAccomodation()	
+	{
+		System.out.println("This " + this.getType() + " dwelling is located at " + this.getLocation() +
+				               "\nIt has " + this.getBaths() + " bathrooms and " + this.getBedrooms() + 
+				               " bedrooms.");
+	}
+}
