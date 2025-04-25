@@ -10,7 +10,7 @@ public abstract class Shaver
 
 	public Shaver(String type)
 	{
-		this.make = "Gilette";//Should put "Gilette" here 0425 updated
+		this.make = "Gilette";//Should put "Gilette" here
 		this.type = type;
 	}
 

@@ -10,7 +10,6 @@ public abstract class Shaver
 
 	public Shaver(String type)
 	{
-		this.make = "Gilette";//Should put "Gilette" here 0425 updated
 		this.type = type;
 	}
 
@@ -25,7 +24,7 @@ public abstract class Shaver
 	 */
 	public String getType()
 	{
-//		this.make = "Gilette"; should put in one argument constructor
+//		this.make = "Gilette"; 
 		return type;
 	}
 
